@@ -16,13 +16,10 @@ mongoose.connect('mongodb://localhost/userDB', {useNewUrlParser: true, useUnifie
 
 
 
-
-
 const userSchema = new mongoose.Schema({
   email: String,
   password: String
 });
-
 
 userSchema.plugin(encrypt,{secret: process.env.SECRET, encryptedFields: ["password"]});
 
